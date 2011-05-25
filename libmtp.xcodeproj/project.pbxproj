@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AE8833E138DA9A800550A90 /* libusb-compat.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE88311138DA93F00550A90 /* libusb-compat.dylib */; };
+		5AE8833F138DA9AA00550A90 /* libusb.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE88316138DA94B00550A90 /* libusb.dylib */; };
 		B00305CF1277B07D009FA3E1 /* device-flags.h in Headers */ = {isa = PBXBuildFile; fileRef = B00305BF1277B07D009FA3E1 /* device-flags.h */; };
 		B00305D01277B07D009FA3E1 /* gphoto2-endian.h in Headers */ = {isa = PBXBuildFile; fileRef = B00305C01277B07D009FA3E1 /* gphoto2-endian.h */; };
 		B00305D11277B07D009FA3E1 /* libmtp.c in Sources */ = {isa = PBXBuildFile; fileRef = B00305C11277B07D009FA3E1 /* libmtp.c */; };
@@ -23,46 +25,44 @@
 		B00305DC1277B07D009FA3E1 /* unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = B00305CC1277B07D009FA3E1 /* unicode.h */; };
 		B00305DD1277B07D009FA3E1 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = B00305CD1277B07D009FA3E1 /* util.c */; };
 		B00305DE1277B07D009FA3E1 /* util.h in Headers */ = {isa = PBXBuildFile; fileRef = B00305CE1277B07D009FA3E1 /* util.h */; };
-		B00305FF1277B39A009FA3E1 /* libusb-compat.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00304DA1277AFB4009FA3E1 /* libusb-compat.dylib */; };
-		B00306001277B39D009FA3E1 /* libusb.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00304D01277AFA9009FA3E1 /* libusb.dylib */; };
 		B00306061277B3CD009FA3E1 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B00306051277B3CD009FA3E1 /* libiconv.dylib */; };
 		D7D0FF8B1124E29800E01FE7 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = D7D0FF621124E29800E01FE7 /* config.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B00304CF1277AFA9009FA3E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC0630554660B00DB518D;
-			remoteInfo = libusb;
-		};
-		B00304D91277AFB4009FA3E1 /* PBXContainerItemProxy */ = {
+		5AE88310138DA93F00550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC0630554660B00DB518D;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D /* libusb-compat.dylib */;
 			remoteInfo = "libusb-compat";
 		};
-		B00305B31277AFC6009FA3E1 /* PBXContainerItemProxy */ = {
+		5AE88315138DA94B00550A90 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D /* libusb.dylib */;
+			remoteInfo = libusb;
+		};
+		5AE88317138DA95600550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC0620554660B00DB518D;
+			remoteGlobalIDString = D2AAC0620554660B00DB518D /* libusb */;
 			remoteInfo = libusb;
 		};
-		B00305B51277AFC6009FA3E1 /* PBXContainerItemProxy */ = {
+		5AE88319138DA95A00550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC0620554660B00DB518D;
+			remoteGlobalIDString = D2AAC0620554660B00DB518D /* libusb-compat */;
 			remoteInfo = "libusb-compat";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libusb.xcodeproj; path = "../libusb-1.0.8/libusb.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "libusb-compat.xcodeproj"; path = "../libusb-compat-0.1.3/libusb-compat.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libusb.xcodeproj; path = ../libusb/libusb.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "libusb-compat.xcodeproj"; path = "../libusb-compat/libusb-compat.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		B00305BF1277B07D009FA3E1 /* device-flags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "device-flags.h"; path = "src/device-flags.h"; sourceTree = SOURCE_ROOT; };
 		B00305C01277B07D009FA3E1 /* gphoto2-endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "gphoto2-endian.h"; path = "src/gphoto2-endian.h"; sourceTree = SOURCE_ROOT; };
 		B00305C11277B07D009FA3E1 /* libmtp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = libmtp.c; path = src/libmtp.c; sourceTree = SOURCE_ROOT; };
@@ -81,8 +81,8 @@
 		B00305CE1277B07D009FA3E1 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = src/util.h; sourceTree = SOURCE_ROOT; };
 		B00306051277B3CD009FA3E1 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		D2AAC0630554660B00DB518D /* libmtp.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libmtp.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		D71350461124D56600E2C1DA /* MacConfigExternalDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = MacConfigExternalDebug.xcconfig; path = ../MacConfigExternalDebug.xcconfig; sourceTree = SOURCE_ROOT; };
-		D71350471124D56600E2C1DA /* MacConfigExternalRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = MacConfigExternalRelease.xcconfig; path = ../MacConfigExternalRelease.xcconfig; sourceTree = SOURCE_ROOT; };
+		D71350461124D56600E2C1DA /* MacConfigExternalDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MacConfigExternalDebug.xcconfig; sourceTree = "<group>"; };
+		D71350471124D56600E2C1DA /* MacConfigExternalRelease.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MacConfigExternalRelease.xcconfig; sourceTree = "<group>"; };
 		D7D0FF621124E29800E01FE7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +91,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B00305FF1277B39A009FA3E1 /* libusb-compat.dylib in Frameworks */,
-				B00306001277B39D009FA3E1 /* libusb.dylib in Frameworks */,
 				B00306061277B3CD009FA3E1 /* libiconv.dylib in Frameworks */,
+				5AE8833E138DA9A800550A90 /* libusb-compat.dylib in Frameworks */,
+				5AE8833F138DA9AA00550A90 /* libusb.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,18 +146,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B00304C91277AFA9009FA3E1 /* Products */ = {
+		5AE8830D138DA93F00550A90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B00304D01277AFA9009FA3E1 /* libusb.dylib */,
+				5AE88311138DA93F00550A90 /* libusb-compat.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B00304D21277AFB4009FA3E1 /* Products */ = {
+		5AE88312138DA94B00550A90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B00304DA1277AFB4009FA3E1 /* libusb-compat.dylib */,
+				5AE88316138DA94B00550A90 /* libusb.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,8 +198,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				B00305B41277AFC6009FA3E1 /* PBXTargetDependency */,
-				B00305B61277AFC6009FA3E1 /* PBXTargetDependency */,
+				5AE88318138DA95600550A90 /* PBXTargetDependency */,
+				5AE8831A138DA95A00550A90 /* PBXTargetDependency */,
 			);
 			name = libmtp;
 			productName = libmtp;
@@ -213,7 +213,6 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB914E08733D8E0010E9CD /* Build configuration list for PBXProject "libmtp" */;
 			compatibilityVersion = "Xcode 3.1";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -225,11 +224,11 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B00304D21277AFB4009FA3E1 /* Products */;
+					ProductGroup = 5AE8830D138DA93F00550A90 /* Products */;
 					ProjectRef = B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */;
 				},
 				{
-					ProductGroup = B00304C91277AFA9009FA3E1 /* Products */;
+					ProductGroup = 5AE88312138DA94B00550A90 /* Products */;
 					ProjectRef = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
 				},
 			);
@@ -241,18 +240,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B00304D01277AFA9009FA3E1 /* libusb.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libusb.dylib;
-			remoteRef = B00304CF1277AFA9009FA3E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B00304DA1277AFB4009FA3E1 /* libusb-compat.dylib */ = {
+		5AE88311138DA93F00550A90 /* libusb-compat.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = "libusb-compat.dylib";
-			remoteRef = B00304D91277AFB4009FA3E1 /* PBXContainerItemProxy */;
+			remoteRef = 5AE88310138DA93F00550A90 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AE88316138DA94B00550A90 /* libusb.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libusb.dylib;
+			remoteRef = 5AE88315138DA94B00550A90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -291,15 +290,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B00305B41277AFC6009FA3E1 /* PBXTargetDependency */ = {
+		5AE88318138DA95600550A90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libusb;
-			targetProxy = B00305B31277AFC6009FA3E1 /* PBXContainerItemProxy */;
+			targetProxy = 5AE88317138DA95600550A90 /* PBXContainerItemProxy */;
 		};
-		B00305B61277AFC6009FA3E1 /* PBXTargetDependency */ = {
+		5AE8831A138DA95A00550A90 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "libusb-compat";
-			targetProxy = B00305B51277AFC6009FA3E1 /* PBXContainerItemProxy */;
+			targetProxy = 5AE88319138DA95A00550A90 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -309,7 +308,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "../libusb-compat-0.1.3/libusb";
+				HEADER_SEARCH_PATHS = "../libusb-compat/libusb";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DHAVE_CONFIG_H",
@@ -324,7 +323,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = "../libusb-compat-0.1.3/libusb";
+				HEADER_SEARCH_PATHS = "../libusb-compat/libusb";
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-DHAVE_CONFIG_H",
