@@ -34,28 +34,28 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC0630554660B00DB518D /* libusb-compat.dylib */;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D;
 			remoteInfo = "libusb-compat";
 		};
 		5AE88315138DA94B00550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC0630554660B00DB518D /* libusb.dylib */;
+			remoteGlobalIDString = D2AAC0630554660B00DB518D;
 			remoteInfo = libusb;
 		};
 		5AE88317138DA95600550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304C81277AFA9009FA3E1 /* libusb.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC0620554660B00DB518D /* libusb */;
+			remoteGlobalIDString = D2AAC0620554660B00DB518D;
 			remoteInfo = libusb;
 		};
 		5AE88319138DA95A00550A90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B00304D11277AFB4009FA3E1 /* libusb-compat.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC0620554660B00DB518D /* libusb-compat */;
+			remoteGlobalIDString = D2AAC0620554660B00DB518D;
 			remoteInfo = "libusb-compat";
 		};
 /* End PBXContainerItemProxy section */
@@ -193,7 +193,6 @@
 				D2AAC0600554660B00DB518D /* Headers */,
 				D2AAC0610554660B00DB518D /* Sources */,
 				D289988505E68E00004EDB86 /* Frameworks */,
-				FA62191812D7CF58001B5A20 /* Generate Breakpad symbols */,
 			);
 			buildRules = (
 			);
@@ -213,6 +212,7 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB914E08733D8E0010E9CD /* Build configuration list for PBXProject "libmtp" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -255,23 +255,6 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		FA62191812D7CF58001B5A20 /* Generate Breakpad symbols */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Generate Breakpad symbols";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = $SRCROOT/../../source/Shared/generatesymbols.sh;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC0610554660B00DB518D /* Sources */ = {
