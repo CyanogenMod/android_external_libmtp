@@ -5541,7 +5541,13 @@ static int send_file_object_info(LIBMTP_mtpdevice_t *device, LIBMTP_file_t *file
   PTPParams *params = (PTPParams *) device->params;
   PTP_USB *ptp_usb = (PTP_USB*) device->usbinfo;
   uint32_t store;
+
+#ifdef _AFT_BUILD
+  int use_primary_storage = 0;
+#else
   int use_primary_storage = 1;
+#endif
+
   uint16_t of = map_libmtp_type_to_ptp_type(filedata->filetype);
   LIBMTP_devicestorage_t *storage;
   uint32_t localph = filedata->parent_id;
@@ -5597,6 +5603,11 @@ static int send_file_object_info(LIBMTP_mtpdevice_t *device, LIBMTP_file_t *file
     } else if (of == PTP_OFC_Text) {
       localph = device->default_text_folder;
     }
+  }
+
+  // default parent handle
+  if (localph == 0) {
+    localph = 0xFFFFFFFFU; // Set to -1
   }
 
   // Here we wire the type to unknown on bugged, but
@@ -5674,10 +5685,6 @@ static int send_file_object_info(LIBMTP_mtpdevice_t *device, LIBMTP_file_t *file
     MTPProperties *prop = NULL;
     uint16_t *properties = NULL;
     uint32_t propcnt = 0;
-
-    // default parent handle
-    if (localph == 0)
-      localph = 0xFFFFFFFFU; // Set to -1
 
     // Must be 0x00000000U for new objects
     filedata->item_id = 0x00000000U;
@@ -5773,8 +5780,8 @@ static int send_file_object_info(LIBMTP_mtpdevice_t *device, LIBMTP_file_t *file
     new_file.StorageID = store;
     new_file.ParentObject = localph;
     new_file.ModificationDate = time(NULL);
-
     // Create the object
+
     ret = ptp_sendobjectinfo(params, &store, &localph, &filedata->item_id, &new_file);
 
     if (ret != PTP_RC_OK) {
@@ -6758,6 +6765,11 @@ uint32_t LIBMTP_Create_Folder(LIBMTP_mtpdevice_t *device, char *name,
   } else {
     store = storage_id;
   }
+
+  if (parent_id == 0) {
+    parent_id = 0xFFFFFFFFU; // Set to -1
+  }
+
   parenthandle = parent_id;
 
   memset(&new_folder, 0, sizeof(new_folder));
