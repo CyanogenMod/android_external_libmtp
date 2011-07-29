@@ -49,6 +49,11 @@
 #define USB_CLASS_PTP 6
 #endif
 
+/* libusb dosn't have misc class defined */
+#ifndef USB_CLASS_MISC
+#define USB_CLASS_MISC 0xEF
+#endif
+
 /* To enable debug prints for USB stuff, switch on this */
 //#define ENABLE_USB_BULK_DEBUG
 
@@ -226,7 +231,8 @@ static int probe_device_descriptor(struct usb_device *dev, FILE *dumpfile)
   if (!(dev->descriptor.bDeviceClass == USB_CLASS_PER_INTERFACE ||
 	dev->descriptor.bDeviceClass == USB_CLASS_COMM ||
 	dev->descriptor.bDeviceClass == USB_CLASS_PTP ||
-	dev->descriptor.bDeviceClass == USB_CLASS_VENDOR_SPEC)) {
+	dev->descriptor.bDeviceClass == USB_CLASS_VENDOR_SPEC ||
+	dev->descriptor.bDeviceClass == USB_CLASS_MISC)) {
     return 0;
   }
 
