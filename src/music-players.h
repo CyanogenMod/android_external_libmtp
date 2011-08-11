@@ -46,8 +46,8 @@
    * and properties.
    */
   { "Motorola", 0x22b8, "Xoom", 0x70a9, DEVICE_FLAG_NONE },
-  { "Samsung", 0x4e8, "Galaxy Tab 10.1", 0x6860 , DEVICE_FLAG_NONE},
   { "Motorola", 0x22b8, "Xoom", 0x70a8 , DEVICE_FLAG_NONE},
+  { "Samsung", 0x4e8, "Galaxy Tab 10.1", 0x6860 , DEVICE_FLAG_NONE},
   { "Creative", 0x041e, "ZEN Vision", 0x411f, DEVICE_FLAG_BROKEN_MTPGETOBJPROPLIST_ALL },
   { "Creative", 0x041e, "Portable Media Center", 0x4123, DEVICE_FLAG_BROKEN_MTPGETOBJPROPLIST_ALL },
   { "Creative", 0x041e, "ZEN Xtra (MTP mode)", 0x4128, DEVICE_FLAG_BROKEN_MTPGETOBJPROPLIST_ALL },
