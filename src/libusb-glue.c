@@ -287,6 +287,7 @@ static int probe_device_descriptor(struct usb_device *dev, FILE *dumpfile)
     }
   }
 
+  usb_close(devh);
   return 0;
 }
 
