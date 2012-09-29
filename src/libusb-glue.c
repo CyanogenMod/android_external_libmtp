@@ -54,6 +54,8 @@
 #define USB_CLASS_MISC 0xEF
 #endif
 
+#define APPLE_VID 0x05ac
+
 /* To enable debug prints for USB stuff, switch on this */
 //#define ENABLE_USB_BULK_DEBUG
 
@@ -229,10 +231,10 @@ static int probe_device_descriptor(struct usb_device *dev, FILE *dumpfile)
    * you find some weird combination...
    */
   if (!(dev->descriptor.bDeviceClass == USB_CLASS_PER_INTERFACE ||
-	dev->descriptor.bDeviceClass == USB_CLASS_COMM ||
-	dev->descriptor.bDeviceClass == USB_CLASS_PTP ||
-	dev->descriptor.bDeviceClass == USB_CLASS_VENDOR_SPEC ||
-	dev->descriptor.bDeviceClass == USB_CLASS_MISC)) {
+	    dev->descriptor.bDeviceClass == USB_CLASS_PTP ||
+	    dev->descriptor.bDeviceClass == USB_CLASS_VENDOR_SPEC) ||
+      /* Apple devices sometimes freeze when probed by libusb */
+      dev->descriptor.idVendor == APPLE_VID) {
     return 0;
   }
 
