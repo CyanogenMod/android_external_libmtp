@@ -141,7 +141,7 @@ void spl_to_playlist_t(LIBMTP_mtpdevice_t* device, PTPObjectInfo *oi,
   // make sure the file will be deleted afterwards
   if(unlink(tmpname) < 0)
     printf("failed to delete temp file for %s.spl -> %s, errno=%s\n", pl->name, tmpname, strerror(errno));
-  int ret = LIBMTP_Get_File_To_File_Descriptor(device, pl->playlist_id, fd, NULL, NULL);
+  int ret = LIBMTP_Get_File_To_File_Descriptor(device, pl->playlist_id, fd, NULL, NULL, NULL);
   if( ret < 0 ) {
     // FIXME     add_ptp_error_to_errorstack(device, ret, "LIBMTP_Get_Playlist: Could not get .spl playlist file.");
     close(fd);
