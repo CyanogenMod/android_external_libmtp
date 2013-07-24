@@ -4716,6 +4716,7 @@ int LIBMTP_Get_File_To_File(LIBMTP_mtpdevice_t *device, uint32_t const id,
 			 void const * const data)
 {
   int fd = -1;
+  struct utimbuf mtime;
   int ret;
 
   // Sanity check
@@ -4738,7 +4739,7 @@ int LIBMTP_Get_File_To_File(LIBMTP_mtpdevice_t *device, uint32_t const id,
     return -1;
   }
 
-  ret = LIBMTP_Get_File_To_File_Descriptor(device, id, fd, callback, data);
+  ret = LIBMTP_Get_File_To_File_Descriptor(device, id, fd, callback, data, &mtime);
 
   // Close file
   close(fd);
@@ -4746,8 +4747,9 @@ int LIBMTP_Get_File_To_File(LIBMTP_mtpdevice_t *device, uint32_t const id,
   // Delete partial file.
   if (ret == -1) {
     unlink(path);
+  } else {
+      utime(path, &mtime);
   }
-
   return ret;
 }
 
@@ -4767,15 +4769,18 @@ int LIBMTP_Get_File_To_File(LIBMTP_mtpdevice_t *device, uint32_t const id,
  *             the <code>progress</code> function in order to
  *             pass along some user defined data to the progress
  *             updates. If not used, set this to NULL.
+ * @param mtime out parameter to return the timestamp for file on
+ *             the device.
  * @return 0 if the transfer was successful, any other value means
- *           failure.
+ *             failure.
  * @see LIBMTP_Get_File_To_File()
  */
 int LIBMTP_Get_File_To_File_Descriptor(LIBMTP_mtpdevice_t *device,
 					uint32_t const id,
 					int const fd,
 					LIBMTP_progressfunc_t const callback,
-					void const * const data)
+					void const * const data,
+                    struct utimbuf * mtime)
 {
   uint16_t ret;
   PTPParams *params = (PTPParams *) device->params;
@@ -4790,6 +4795,11 @@ int LIBMTP_Get_File_To_File_Descriptor(LIBMTP_mtpdevice_t *device,
   if (ob->oi.ObjectFormat == PTP_OFC_Association) {
     add_error_to_errorstack(device, LIBMTP_ERROR_GENERAL, "LIBMTP_Get_File_To_File_Descriptor(): Bad object format.");
     return -1;
+  }
+
+  if (mtime != NULL) {
+    mtime->actime = ob->oi.CaptureDate;
+    mtime->modtime = ob->oi.ModificationDate;
   }
 
   // Callbacks
@@ -4930,6 +4940,8 @@ int LIBMTP_Get_Track_To_File(LIBMTP_mtpdevice_t *device, uint32_t const id,
  *             the <code>progress</code> function in order to
  *             pass along some user defined data to the progress
  *             updates. If not used, set this to NULL.
+ * @param mtime out parameter to return the timestamp for file on
+ *             the device.
  * @return 0 if the transfer was successful, any other value means
  *           failure.
  * @see LIBMTP_Get_Track_To_File()
@@ -4938,10 +4950,11 @@ int LIBMTP_Get_Track_To_File_Descriptor(LIBMTP_mtpdevice_t *device,
 					uint32_t const id,
 					int const fd,
 					LIBMTP_progressfunc_t const callback,
-					void const * const data)
+					void const * const data,
+                    struct utimbuf * mtime)
 {
   // This is just a wrapper
-  return LIBMTP_Get_File_To_File_Descriptor(device, id, fd, callback, data);
+  return LIBMTP_Get_File_To_File_Descriptor(device, id, fd, callback, data, mtime);
 }
 
 /**
